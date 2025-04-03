@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>APIGen-MT</title>
+
+    <meta name="description" content="APIGen-MT">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--FACEBOOK-->
+    <meta property="og:image" content="./img/overview.jpg">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1196">
+    <meta property="og:image:height" content="705">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://apigen-pipeline.github.io/"/>
+    <meta property="og:title" content="APIGen-MT" />
+    <meta property="og:description" content="Project page for APIGen-MT." />
+ 
+    <!--TWITTER-->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="APIGen-MT" />
+    <meta name="twitter:description" content="Project page for APIGen-MT" />
+    <meta name="twitter:image" content="./img/overview.jpg" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    
+    <script src="js/app.js"></script>
+    
+    <style>
+        .nav-pills {
+          position: relative;
+          display: inline;
+        }
+        .imtip {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+    </style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5JBS73F70V"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5JBS73F70V');
+</script>
+<body>
+    <div class="container" id="main">
+        <div class="row mt-4">
+            <h2 class="col-md-12 text-center">
+                <b><font size="+6">APIGen-MT: Agentic Pipeline for Multi-Turn Data Generation via Simulated Agent-Human Interplay</font></b></br> 
+            </h2>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                <br>
+                <li><a href="https://aksh555.github.io/">Akshara Prabhakar</a><sup>*</sup></li>
+                <li><a href="https://zuxin.me/">Zuxin Liu</a><sup>*</sup></li>
+                <li><a href="https://weirayao.github.io/">Weiran Yao</a></li>
+                <li><a href="https://jianguoz.github.io/">Jianguo Zhang</a></li>
+                <li><a href="https://people.cs.vt.edu/mingzhu/">Ming Zhu</a></li>
+                <li><a href="https://www.linkedin.com/in/shiyu-wang-162398/">Shiyu Wang</a></li> <br>
+                <li><a href="https://sites.google.com/view/zhiwei-jim">Zhiwei Liu</a></li>
+                <li><a href="https://www.linkedin.com/in/tulika-awalgaonkar-1b3275138/">Tulika Awalgaonkar</a></li>
+                <li><a href="https://scholar.google.com/citations?user=WsQjxFwAAAAJ&hl=en">Haolin Chen</a></li>
+                <li><a href="https://www.linkedin.com/in/quocthai9120/">Thai Hoang</a></li> <br>
+                <li><a href="https://www.niebles.net/">Juan Carlos Niebles</a><sup>+</sup></li>
+                <li><a href="https://www.shelbyh.ai/">Shelby Heinecke</a><sup>+</sup></li>
+                <li><a href="https://huan-december.github.io/">Huan Wang</a><sup>+</sup></li>
+                <li><a href="https://scholar.google.com/citations?user=ImpbxLsAAAAJ&hl=en">Silvio Savarese</a><sup>+</sup></li>
+                <li><a href="http://cmxiong.com/">Caiming Xiong</a><sup>+</sup></li>
+
+                <br>
+                <br>
+                <small style="font-size: 14px;"><sup>*</sup>Equal contribution. &nbsp&nbsp&nbsp&nbsp&nbsp <sup>+</sup>Senior Authors.</small>
+                <br>
+                <br>
+                    <a href="https://www.salesforceairesearch.com/">
+                        <image src="img/salesforce-research.png" height="40px"> 
+                        Salesforce AI Research &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </a>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row justify-content-md-center">
+            <div class="col-md-2 text-center">
+                <a href="https://arxiv.org/abs/2406.18518">
+                    <img src="img/paper_small.png" height="60px" alt="Paper">
+                    <h4><strong>Paper</strong></h4>
+                </a>
+            </div>
+            <div class="col-md-2 text-center">
+                <a href="https://huggingface.co/Salesforce/xLAM-2">
+                    <img src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.svg" height="60px" alt="HuggingFace Models">
+                    <h4><strong>Models</strong></h4>
+                </a>
+            </div>
+            <div class="col-md-2 text-center">
+                <a href="https://huggingface.co/Salesforce/xLAM-2">
+                    <img src="img/data.png" height="60px" alt="Code">
+                    <h4><strong>Dataset (Coming Soon)</strong></h4>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="row justify-content-md-center">
+            <div class="col-md-10 col-lg-8">
+                <h3 class="mt-4 mb-2">Abstract</h3>
+                <p class="text-justify">
+                    Training effective AI agents for multi-turn interactions requires high-quality data that captures realistic human-agent dynamics, yet such data is scarce and expensive to collect manually. We introduce APIGen-MT, a two-phase framework that generates verifiable and diverse multi-turn agent data. In the first phase, our agentic pipeline produces detailed task blueprints with groundtruth actions, leveraging a committee of LLM reviewers and iterative feedback loops. These blueprints are then transformed into complete interaction trajectories through simulated human-agent interplay. We train a family of models—the xLAM-2-fc-r—with sizes ranging from 1B to 70B parameters.
+                    Our models outperform frontier models such as GPT-4o and Claude 3.5 on τ-bench and BFCL benchmarks, with even the smaller models surpassing larger counterparts, particularly in multi-turn settings, while maintaining superior consistency across multiple trials. 
+                    Comprehensive experiments demonstrate that our verified-blueprint-to-details approach yields high-quality training data, enabling the development of more reliable, efficient, and capable agents.
+                </p>
+                <p style="text-align:center;">
+                    <image src="img/model_board.png" width="100%" alt="Comparative performance of xLAM-2-fc-r models against state-of-the-art baselines">
+                    <br><small>Comparative performance of larger xLAM-2-fc-r models (8B-70B, trained with APIGen-MT data) against state-of-the-art baselines on function-calling (BFCL v3, as of date 04/02/2025) and agentic (τ-bench) capabilities.</small>
+                </p>
+
+                <h3 class="mt-4 mb-2">APIGen-MT Framework</h3>
+                <p class="text-justify">
+                    Multi-turn interactions between an AI assistant and a human user present unique challenges that go beyond single-turn exchanges. We formalize this interaction as a Partially Observable Markov Decision Process (POMDP) where an assistant must engage in a multi-turn conversation to understand the user's intent and solve it through appropriate interactions with the environment while adhering to policies.
+                </p>
+                <p class="text-justify">
+                    Generating high-quality multi-turn data that captures the complexities of agent-human interactions presents significant challenges. Directly synthesizing multi-turn conversations in one shot is difficult for two key reasons: (1) a single error or hallucination in any intermediate step can lead to complete failure, and (2) the content of each turn depends on previous function calls and their outputs, creating complex dependencies that are difficult to maintain consistently.
+                </p>
+                <p style="text-align:center;">
+                    <image src="img/pipeline.png" width="100%" alt="Overview of the APIGen-MT framework">
+                </p>
+                <p class="text-justify">
+                    To address these challenges, we introduce APIGen-MT, a two-phase framework for generating verifiable and diverse multi-turn data. Our approach extends the APIGen framework by adding an agentic feedback loop and simulated human-agent interplay to generate realistic multi-turn conversations.
+                </p>
+                <p class="text-justify">
+                    The core insight of our approach is to separate the task generation process into two distinct phases: first creating a detailed "blueprint" of the task (Phase 1), and then using this blueprint to guide the generation of realistic multi-turn interactions that fill in the conversational details (Phase 2). This separation allows us to ensure both the correctness of the underlying task structure and the naturalness of the resulting conversations.
+                </p>
+
+                <h4 class="mt-4 mb-2">Phase 1: Task Configuration and Groundtruth Generation</h4>
+                <p class="text-justify">
+                    The initial phase of APIGen-MT focuses on systematically generating well-defined task configurations, each comprising a user instruction (q), a corresponding sequence of verifiable groundtruth actions (a_gt), and the expected final outputs (o_gt). This phase establishes a solid, verifiable foundation for each interaction scenario before the complexities of conversational dynamics are introduced. This is achieved through an agentic workflow incorporating multi-stage validation and refinement loops:
+                </p>
+                <ol>
+                    <li><b>Context Preparation:</b> Relevant information such as available APIs, domain-specific rules or policies, and reference data is assembled.</li>
+                    <li><b>LLM-based Data Generator:</b> An LLM utilizes the prepared context to propose initial task configurations.</li>
+                    <li><b>Format & Execution Checker:</b> Proposed configurations undergo automated technical validation.</li>
+                    <li><b>Review Committee:</b> Configurations passing rule-based checks proceed to semantic evaluation by a committee of multiple LLM reviewers.</li>
+                    <li><b>Feedback Generation and Refinement:</b> If a task fails at either the validation or review stage, a Feedback Generator aggregates failure reasons and reviews, reflects upon them, and produces a summarized improvement plan.</li>
+                </ol>
+                <p class="text-justify">
+                    This agentic design with feedback loops is crucial for generating high-quality tasks efficiently. By incorporating reflection and improvement based on validation results, the system can learn from failures and progressively generate better tasks.
+                </p>
+
+                <h4 class="mt-4 mb-2">Phase 2: Human-Agent-Environment Interaction Trajectory Collection</h4>
+                <p class="text-justify">
+                    Building upon the validated task configurations from Phase 1, the second phase generates realistic multi-turn interaction data by simulating dynamic conversations between an LLM-based human user (H) and a test agent (A) operating within an executable environment. Guided by the task instruction q and often a specific persona, the simulated human naturally reveals information or sub-goals incrementally, while the agent interprets the evolving context, interacts with the environment via API calls when needed, and responds coherently.
+                </p>
+                <p class="text-justify">
+                    The simulation produces complete interaction trajectories that capture dialogue turns, agent actions, and environment responses. Each trajectory is validated by comparing its outcome against the groundtruth actions (a_gt) and expected outputs (o_gt) from Phase 1. Only those trajectories that verifiably achieve the task—using both state-based and output-based checks—are accepted into the dataset, ensuring that interactions are both dynamically plausible and grounded in a correct solution.
+                </p>
+                <p style="text-align:center;">
+                    <image src="img/preview.png" width="100%" alt="Realization of APIGen-MT framework for τ-bench">
+                </p>
+                <p class="text-justify">
+                    This two-phase design offers several benefits. First, it provides verifiability by grounding interaction data in pre-validated task configurations. Second, it enhances realism by focusing the simulation on natural turn-by-turn dynamics without the simultaneous burden of task solution generation. Lastly, the modular approach isolates issues in task design from those in conversational modeling, facilitating debugging and scalability across diverse interaction patterns.
+                </p>
+
+                <h4 class="mt-4 mb-2">A Case Study on τ-bench</h4>
+                <p class="text-justify">
+                    We implemented the APIGen-MT framework using τ-bench as a testbed. For task generation and validation, we model the available APIs in each τ-bench domain as a directed graph, where nodes represent APIs and edges represent dependencies between them. We utilize specialized context samplers including API Sampler, Policy Sampler, Domain Data Sampler, Persona Sampler, and Example Sampler to ensure task diversity, realism, and grounding.
+                </p>
+                <p class="text-justify">
+                    We implement a rigorous three-stage validation process:
+                </p>
+                <ul>
+                    <li><b>Stage 1: Action Validation</b> - Format Check, Execution Check, and Policy Compliance Check</li>
+                    <li><b>Stage 2: Alignment Validation</b> - Evaluating whether the groundtruth actions accurately fulfill the user's intent</li>
+                    <li><b>Stage 3: Final Semantic Review & Refinement</b> - Based on aggregated scores from the committee</li>
+                </ul>
+                <p class="text-justify">
+                    We also introduce Reverse Task Recombination, a technique that leverages the principle of compositionality to build complex tasks from simpler, independently validated "building blocks." For Phase 2, we simulate multi-turn interaction trajectories between an agent and a human user modeled by an LLM. We employ rejection sampling to ensure that only trajectories achieving the task goal are retained.
+                </p>
+
+                <h4 class="mt-4 mb-2">Data Collection & Statistics</h4>
+                <p class="text-justify">
+                    We source APIs implemented as Python functions from τ-bench. Among these, we have 15 'read' and 13 'write' APIs across both domains. We utilize GPT-4o and DeepSeek V3 and R1 models in the task generation, validation, and agent-human interplay stages to collect training data.
+                </p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p style="text-align:center;">
+                            <image src="img/tau_training_data_stats_density.png" width="90%" alt="Density distribution of assistant and user turns in collected trajectories">
+                            <br><small>Density distribution of assistant and user turns in collected trajectories.</small>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <p style="text-align:center;">
+                            <image src="img/dataset_stat.png" width="90%" alt="Statistics for the dataset generated using APIGen-MT">
+                            <br><small>Statistics for the dataset generated using APIGen-MT. Success rates (S.R.) are reported for the task configuration (w. and w/o agentic feedback in Phase 1) and trajectory simulation (Phase 2) stages.</small>
+                        </p>
+                    </div>
+                </div>
+                <p class="text-justify">
+                    We collected a total of 3,820 validated successful trajectories. Our data shows that we can efficiently collect long trajectories requiring a strong model like GPT-4o to take an average of 12 turns to complete the task using APIGen-MT. Our agentic pipeline involving review committee and iterative refinement via reflection provides a 2.5x boost to the task collection success rate to attain 70%.
+                </p>
+
+                <h3 class="mt-4 mb-2">Experimental Results</h3>
+                <p class="text-justify">
+                    We evaluate the effectiveness of our APIGen-MT approach for generating multi-turn data through simulated agent-human interplay. We perform filtered Behavioral Cloning (BC) using the collected trajectories with Llama 3.1/3.2 Instruct models and Qwen 2.5 Instruct models.
+                </p>
+                <p class="text-justify">
+                    We evaluate performance on two challenging benchmarks designed specifically for assessing agent capabilities:
+                </p>
+                <ul>
+                    <li><b>BFCL v3</b> is a leading benchmark for tool-use evaluation, specifically designed to assess LLMs' function calling capabilities. It introduces comprehensive evaluation across single-turn, multi-turn, and multi-step function calling scenarios.</li>
+                    <li><b>τ-bench</b> is a comprehensive benchmark for evaluating AI agents in realistic scenarios. It measures an agent's ability to interact with simulated human users and programmatic APIs while following domain-specific policies.</li>
+                </ul>
+
+                <h4 class="mt-4 mb-2">Function-Calling Capabilities (BFCL v3)</h4>
+                <p class="text-justify">
+                    On the BFCL v3 benchmark, our models demonstrate impressive results. xLAM-2-70b-fc-r achieves the top position on the leaderboard with an overall accuracy of 78.19%, surpassing all proprietary and open-source models. The strength of our approach is particularly evident in multi-turn scenarios, where xLAM-2-70b-fc-r achieves 75.12% accuracy, significantly outperforming models like GPT-4o (47.62%) and Claude models.
+                </p>
+                
+                <div align="center">
+                    <img src="img/bfcl-result.png" width="620" alt="Performance comparison on Berkeley Function-Calling Leaderboard">
+                    <p><small>Performance comparison of different models on BFCL leaderboard. The rank is based on the overall accuracy, which is a weighted average of different evaluation categories. "FC" stands for function-calling mode in contrast to using a customized "prompt" to extract the function calls.</small></p>
+                </div>
+                
+                <p class="text-justify">
+                    Our smaller models also show remarkable performance on BFCL v3. xLAM-2-32b-fc-r ranks second with 75.83% overall accuracy, and even our 8B parameter model (xLAM-2-8b-fc-r) achieves 72.83% accuracy, outperforming GPT-4o (72.08%). This demonstrates that models trained on our synthetic data can achieve state-of-the-art performance with significantly fewer parameters than proprietary alternatives.
+                </p>
+                <p class="text-justify">
+                    The performance gap is particularly pronounced in multi-turn scenarios, where our models consistently outperform baselines. For instance, xLAM-2-8b-fc-r achieves 69.25% accuracy on multi-turn tasks, compared to 47.62% for GPT-4o and 41% for GPT-4o in function-calling mode. This highlights the effectiveness of our APIGen-MT approach in generating high-quality multi-turn training data that captures the complexities of real-world agent-human interactions.
+                </p>
+
+                <h4 class="mt-4 mb-2">Multi-Turn Agent Capabilities (τ-bench)</h4>
+                <p class="text-justify">
+                    Our xLAM-2-70b-fc-r model achieves an overall success rate of 56.2% on τ-bench, significantly outperforming the base Llama 3.1 70B Instruct model (38.2%) and other open-source models like DeepSeek v3 (40.6%). Notably, our model even outperforms proprietary models such as GPT-4o (52.9%) and approaches the performance of more recent models like Claude 3.5 Sonnet (new) (60.1%).
+                </p>
+                
+                <div align="center">
+                    <table class="table" style="width: 80%; font-size: 0.9em; margin-bottom: 1rem;">
+                        <caption style="caption-side: top; font-size: 0.9em; padding: 0.3rem;">Success Rate (pass@1) on τ-bench benchmark (averaged across at least 5 trials)</caption>
+                        <thead>
+                            <tr style="line-height: 1.2;">
+                                <th style="padding: 0.4rem;">Model</th>
+                                <th style="padding: 0.4rem;">τ-Retail</th>
+                                <th style="padding: 0.4rem;">τ-Airline</th>
+                                <th style="padding: 0.4rem;">Overall</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Open-Source Models -->
+                            <tr>
+                                <td colspan="4" style="text-align: center; font-style: italic; padding: 0.2rem;">Open-Source Models</td>
+                            </tr>
+                            <tr style="background-color: #C6DDFE; line-height: 1.2;">
+                                <td style="padding: 0.4rem;">xLAM-2-70b-fc-r</td>
+                                <td style="padding: 0.4rem;">67.1</td>
+                                <td style="padding: 0.4rem;">45.2</td>
+                                <td style="padding: 0.4rem;">56.2</td>
+                            </tr>
+                            <tr style="background-color: #DAE8FC; line-height: 1.2;">
+                                <td style="padding: 0.4rem;">xLAM-2-32b-fc-r</td>
+                                <td style="padding: 0.4rem;">64.3</td>
+                                <td style="padding: 0.4rem;">45.0</td>
+                                <td style="padding: 0.4rem;">54.6</td>
+                            </tr>
+                            <tr style="background-color: #E8F2FF; line-height: 1.2;">
+                                <td style="padding: 0.4rem;">xLAM-2-8b-fc-r</td>
+                                <td style="padding: 0.4rem;">58.2</td>
+                                <td style="padding: 0.4rem;">35.2</td>
+                                <td style="padding: 0.4rem;">46.7</td>
+                            </tr>
+                            <tr style="background-color: #ECF4FF; line-height: 1.2;">
+                                <td style="padding: 0.4rem;">xLAM-2-3b-fc-r</td>
+                                <td style="padding: 0.4rem;">44.4</td>
+                                <td style="padding: 0.4rem;">32.0</td>
+                                <td style="padding: 0.4rem;">38.2</td>
+                            </tr>
+                            <tr style="background-color: #F0F6FF; line-height: 1.2;">
+                                <td style="padding: 0.4rem;">xLAM-2-1b-fc-r</td>
+                                <td style="padding: 0.4rem;">22.5</td>
+                                <td style="padding: 0.4rem;">21.0</td>
+                                <td style="padding: 0.4rem;">21.8</td>
+                            </tr>
+                            <tr style="line-height: 1.2;">
+                                <td style="padding: 0.4rem;">Qwen 2.5 32B Instruct</td>
+                                <td style="padding: 0.4rem;">24.4</td>
+                                <td style="padding: 0.4rem;">25.0</td>
+                                <td style="padding: 0.4rem;">24.7</td>
+                            </tr>
+                            <tr style="line-height: 1.2;">
+                                <td style="padding: 0.4rem;">Llama 3.1 70B Instruct</td>
+                                <td style="padding: 0.4rem;">50.4</td>
+                                <td style="padding: 0.4rem;">26.0</td>
+                                <td style="padding: 0.4rem;">38.2</td>
+                            </tr>
+                            <tr style="line-height: 1.2;">
+                                <td style="padding: 0.4rem;">DeepSeek v3</td>
+                                <td style="padding: 0.4rem;">58.3</td>
+                                <td style="padding: 0.4rem;">22.8</td>
+                                <td style="padding: 0.4rem;">40.6</td>
+                            </tr>
+                            <!-- Proprietary Models -->
+                            <tr>
+                                <td colspan="4" style="text-align: center; font-style: italic; padding: 0.2rem;">Proprietary Models</td>
+                            </tr>
+                            <tr style="line-height: 1.2;">
+                                <td style="padding: 0.4rem;">Gemini 1.5 pro</td>
+                                <td style="padding: 0.4rem;">54.9</td>
+                                <td style="padding: 0.4rem;">25.2</td>
+                                <td style="padding: 0.4rem;">40.1</td>
+                            </tr>
+                            <tr style="line-height: 1.2;">
+                                <td style="padding: 0.4rem;">gpt-4o-2024-11-20</td>
+                                <td style="padding: 0.4rem;">62.8</td>
+                                <td style="padding: 0.4rem;">43.0</td>
+                                <td style="padding: 0.4rem;">52.9</td>
+                            </tr>
+                            <tr style="line-height: 1.2;">
+                                <td style="padding: 0.4rem;">o1</td>
+                                <td style="padding: 0.4rem;">73.5</td>
+                                <td style="padding: 0.4rem;">54.2</td>
+                                <td style="padding: 0.4rem;">63.9</td>
+                            </tr>
+                            <tr style="line-height: 1.2;">
+                                <td style="padding: 0.4rem;">Claude 3.5 Haiku</td>
+                                <td style="padding: 0.4rem;">51.0</td>
+                                <td style="padding: 0.4rem;">22.8</td>
+                                <td style="padding: 0.4rem;">36.9</td>
+                            </tr>
+                            <tr style="line-height: 1.2;">
+                                <td style="padding: 0.4rem;">Claude 3.5 Sonnet</td>
+                                <td style="padding: 0.4rem;">62.6</td>
+                                <td style="padding: 0.4rem;">36.0</td>
+                                <td style="padding: 0.4rem;">49.3</td>
+                            </tr>
+                            <tr style="line-height: 1.2;">
+                                <td style="padding: 0.4rem;">Claude 3.5 Sonnet (new)</td>
+                                <td style="padding: 0.4rem;">71.5</td>
+                                <td style="padding: 0.4rem;">48.8</td>
+                                <td style="padding: 0.4rem;">60.1</td>
+                            </tr>
+                            <tr style="line-height: 1.2;">
+                                <td style="padding: 0.4rem;">Claude 3.7 Sonnet</td>
+                                <td style="padding: 0.4rem;">78.3</td>
+                                <td style="padding: 0.4rem;">41.2</td>
+                                <td style="padding: 0.4rem;">59.8</td>
+                            </tr>
+                            <tr style="line-height: 1.2;">
+                                <td style="padding: 0.4rem;">Claude 3.7 Sonnet + optimized prompt</td>
+                                <td style="padding: 0.4rem;">81.2</td>
+                                <td style="padding: 0.4rem;">58.4</td>
+                                <td style="padding: 0.4rem;">69.8</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+             
+                <p class="text-justify">
+                    A particularly striking result is that our smaller models, such as xLAM-2-32b-fc-r and xLAM-2-8b-fc-r, achieve impressive performance (54.6% and 46.7% respectively), outperforming much larger baseline models. This suggests that our synthetic data generation approach enables efficient knowledge transfer, allowing smaller models to achieve competitive performance with significantly fewer parameters.
+                </p>
+
+                <h4 class="mt-4 mb-2">Model Consistency & Stability</h4>
+                <p class="text-justify">
+                    To evaluate the consistency and reliability of our models, we examine their performance across multiple trials. We plot the pass^k curves on τ-bench, which measure the probability that all k independent trials succeed for a given task, averaged across all tasks.
+                </p>
+
+                <p style="text-align:center;">
+                    <image src="img/pass_k_curves_retail_airline.png" width="100%" alt="Pass^k curves for τ-retail and τ-airline domains">
+                    <br><small>Pass^k curves measuring the probability that all 5 independent trials succeed for a given task, averaged across all tasks for τ-retail (left) and τ-airline (right) domains. Higher values indicate better consistency of the models.</small>
+                </p>
+                
+                <p class="text-justify">
+                    As k increases, we see less drop in success rate for our models compared to baselines. Notably, on the more complex airline domain, xLAM-2-70b-fc-r has a higher pass^5 score than Claude, despite having a slightly lower pass^1, suggesting higher reliability and consistency across multiple trials. This is a critical property for deployment in real-world applications, where consistent performance is essential.
+                </p>
+                
+                <p class="text-justify">
+                    These results demonstrate that our APIGen-MT approach for generating synthetic multi-turn data through simulated agent-human interplay is highly effective. Models trained on this data consistently outperform both proprietary and open-source baselines, with particularly strong performance in multi-turn scenarios. Importantly, our approach enables smaller models to achieve competitive or superior performance compared to much larger models, highlighting the efficiency and effectiveness of our data generation methodology.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-md-center mt-4">
+        <div class="col-md-10 col-lg-8">
+            <p class="text-justify" style="font-size: 10px;">
+                This page is adapted from the template of <a href="https://video-language-planning.github.io/">Video Language Planning</a> project website. We thank the authors for providing the template.
+            </p>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>
+
