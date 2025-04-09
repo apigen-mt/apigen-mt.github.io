@@ -73,23 +73,23 @@
                 <br>
                 <li><a href="https://aksh555.github.io/">Akshara Prabhakar</a><sup>*</sup></li>
                 <li><a href="https://zuxin.me/">Zuxin Liu</a><sup>*</sup></li>
-                <li><a href="https://weirayao.github.io/">Weiran Yao</a></li>
-                <li><a href="https://jianguoz.github.io/">Jianguo Zhang</a></li>
-                <li><a href="https://people.cs.vt.edu/mingzhu/">Ming Zhu</a></li>
+                <li><a href="https://people.cs.vt.edu/mingzhu/">Ming Zhu</a><sup>†</sup></li>
+                <li><a href="https://jianguoz.github.io/">Jianguo Zhang</a><sup>†</sup></li>
+                <li><a href="https://www.linkedin.com/in/tulika-awalgaonkar-1b3275138/">Tulika Awalgaonkar</a><sup>†</sup></li>
                 <li><a href="https://www.linkedin.com/in/shiyu-wang-162398/">Shiyu Wang</a></li> <br>
                 <li><a href="https://sites.google.com/view/zhiwei-jim">Zhiwei Liu</a></li>
-                <li><a href="https://www.linkedin.com/in/tulika-awalgaonkar-1b3275138/">Tulika Awalgaonkar</a></li>
                 <li><a href="https://scholar.google.com/citations?user=WsQjxFwAAAAJ&hl=en">Haolin Chen</a></li>
-                <li><a href="https://www.linkedin.com/in/quocthai9120/">Thai Hoang</a></li> <br>
-                <li><a href="https://www.niebles.net/">Juan Carlos Niebles</a><sup>+</sup></li>
-                <li><a href="https://www.shelbyh.ai/">Shelby Heinecke</a><sup>+</sup></li>
-                <li><a href="https://huan-december.github.io/">Huan Wang</a><sup>+</sup></li>
-                <li><a href="https://scholar.google.com/citations?user=ImpbxLsAAAAJ&hl=en">Silvio Savarese</a><sup>+</sup></li>
-                <li><a href="http://cmxiong.com/">Caiming Xiong</a><sup>+</sup></li>
+                <li><a href="https://www.linkedin.com/in/quocthai9120/">Thai Hoang</a></li>
+                <li><a href="https://www.niebles.net/">Juan Carlos Niebles</a></li> <br>
+                <li><a href="https://www.shelbyh.ai/">Shelby Heinecke</a><sup>‡</sup></li>
+                <li><a href="https://weirayao.github.io/">Weiran Yao</a><sup>‡</sup></li>
+                <li><a href="https://huan-december.github.io/">Huan Wang</a><sup>‡</sup></li>
+                <li><a href="https://scholar.google.com/citations?user=ImpbxLsAAAAJ&hl=en">Silvio Savarese</a><sup>‡</sup></li>
+                <li><a href="http://cmxiong.com/">Caiming Xiong</a><sup>‡</sup></li>
 
                 <br>
                 <br>
-                <small style="font-size: 14px;"><sup>*</sup>Equal contribution. &nbsp&nbsp&nbsp&nbsp&nbsp <sup>+</sup>Senior Authors.</small>
+                <small style="font-size: 14px;"><sup>*</sup>Co-first Authors. &nbsp&nbsp&nbsp <sup>†</sup>Core Contributors. &nbsp&nbsp&nbsp <sup>‡</sup>Senior Authors.</small>
                 <br>
                 <br>
                     <a href="https://www.salesforceairesearch.com/">
@@ -394,6 +394,33 @@
                 <p class="text-justify">
                     These results demonstrate that our APIGen-MT approach for generating synthetic multi-turn data through simulated agent-human interplay is highly effective. Models trained on this data consistently outperform both proprietary and open-source baselines, with particularly strong performance in multi-turn scenarios. Importantly, our approach enables smaller models to achieve competitive or superior performance compared to much larger models, highlighting the efficiency and effectiveness of our data generation methodology.
                 </p>
+            </div>
+        </div>
+        <div class="row justify-content-md-center mt-4">
+            <div class="col-md-10 col-lg-8">
+                <h4 class="mt-4 mb-2">Citation</h4>
+                <p class="text-justify">
+                    If you use our model or dataset in your work, please cite our paper:
+                </p>
+                <pre><code class="language-bibtex">@article{prabhakar2025apigenmt,
+  title={APIGen-MT: Agentic Pipeline for Multi-Turn Data Generation via Simulated Agent-Human Interplay},
+  author={Prabhakar, Akshara and Liu, Zuxin and Zhu, Ming and Zhang, Jianguo and Awalgaonkar, Tulika and Wang, Shiyu and Liu, Zhiwei and Chen, Haolin and Hoang, Thai and Niebles, Juan Carlos and Heinecke, Shelby and Yao, Weiran and Wang, Huan and Savarese, Silvio and Xiong, Caiming},
+  journal={arXiv preprint arXiv:2504.03601},
+  year={2025}
+}</code></pre>
+                <button onclick="copyToClipboard()" class="btn btn-sm btn-outline-secondary mt-2">Copy Citation</button>
+                <script>
+                function copyToClipboard() {
+                  const citation = `@article{prabhakar2025apigenmt,
+  title={APIGen-MT: Agentic Pipeline for Multi-Turn Data Generation via Simulated Agent-Human Interplay},
+  author={Prabhakar, Akshara and Liu, Zuxin and Zhu, Ming and Zhang, Jianguo and Awalgaonkar, Tulika and Wang, Shiyu and Liu, Zhiwei and Chen, Haolin and Hoang, Thai and Niebles, Juan Carlos and Heinecke, Shelby and Yao, Weiran and Wang, Huan and Savarese, Silvio and Xiong, Caiming},
+  journal={arXiv preprint arXiv:2504.03601},
+  year={2025}
+}`;
+                  navigator.clipboard.writeText(citation);
+                  alert("Citation copied to clipboard!");
+                }
+                </script>
             </div>
         </div>
     </div>
