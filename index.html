@@ -114,9 +114,15 @@
                 </a>
             </div>
             <div class="col-md-2 text-center">
-                <a href="https://huggingface.co/datasets/Salesforce/xlam-function-calling-60k">
+                <a href="https://huggingface.co/datasets/Salesforce/APIGen-MT-5k">
                     <img src="img/data.png" height="60px" alt="Code">
-                    <h4><strong>Dataset (Coming Soon)</strong></h4>
+                    <h4><strong>Dataset</strong></h4>
+                </a>
+            </div>
+            <div class="col-md-2 text-center">
+                <a href="https://www.salesforce.com/blog/xlam-large-action-models-v2/">
+                    <img src="img/salesforce-research.png" height="60px" alt="Blog">
+                    <h4><strong>Blog</strong></h4>
                 </a>
             </div>
         </div>
@@ -199,7 +205,7 @@
 
                 <h4 class="mt-4 mb-2">Data Collection & Statistics</h4>
                 <p class="text-justify">
-                    We source APIs implemented as Python functions from τ-bench. Among these, we have 15 'read' and 13 'write' APIs across both domains. We utilize GPT-4o and DeepSeek V3 and R1 models in the task generation, validation, and agent-human interplay stages to collect training data.
+                    We source APIs implemented as Python functions from τ-bench. Among these, we have 15 'read' and 13 'write' APIs across both domains. We utilize GPT-4o and DeepSeek V3 models in the task generation, validation, and agent-human interplay stages to collect training data.
                 </p>
                 <div class="row">
                     <div class="col-md-6">
@@ -210,13 +216,13 @@
                     </div>
                     <div class="col-md-6">
                         <p style="text-align:center;">
-                            <image src="img/dataset_stat.png" width="90%" alt="Statistics for the dataset generated using APIGen-MT">
+                            <image src="img/dataset_stat.png" width="95%" alt="Statistics for the dataset generated using APIGen-MT">
                             <br><small>Statistics for the dataset generated using APIGen-MT. Success rates (S.R.) are reported for the task configuration (w. and w/o agentic feedback in Phase 1) and trajectory simulation (Phase 2) stages.</small>
                         </p>
                     </div>
                 </div>
                 <p class="text-justify">
-                    We collected a total of 3,820 validated successful trajectories. Our data shows that we can efficiently collect long trajectories requiring a strong model like GPT-4o to take an average of 12 turns to complete the task using APIGen-MT. Our agentic pipeline involving review committee and iterative refinement via reflection provides a 2.5x boost to the task collection success rate to attain 70%.
+                    Our data shows that we can efficiently collect long trajectories requiring a strong model like GPT-4o to take an average of 12 turns to complete the task using APIGen-MT. Our agentic pipeline involving review committee and iterative refinement via reflection provides a 2.5x boost to the task collection success rate to attain 70%.
                 </p>
 
                 <h3 class="mt-4 mb-2">Experimental Results</h3>
@@ -435,4 +441,3 @@
     <script>hljs.highlightAll();</script>
 </body>
 </html>
-
