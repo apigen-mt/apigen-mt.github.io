@@ -24,7 +24,7 @@ library_name: transformers
 <p align="center">
   <a href="https://arxiv.org/abs/2504.03601">[Paper]</a>  |
   <a href="https://apigen-mt.github.io/">[Homepage]</a>  |
-  <a href="https://huggingface.co/datasets/Salesforce/xlam-function-calling-60k">[Dataset, Coming Soon]</a> |
+  <a href="https://huggingface.co/datasets/Salesforce/APIGen-MT-5k">[Dataset]</a> |
   <a href="https://github.com/SalesforceAIResearch/xLAM">[Github]</a>
 </p>
 <hr>
